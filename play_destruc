@@ -1,0 +1,50 @@
+// ? Destructing objects and arrays
+// sept 2024
+
+const person = {
+    name: 'John',
+    age: 25,
+    hobbies: ['reading', 'cooking'],
+    greet: function(){
+        console.log('Hello, my name is '+this.name+' and I am ' + this.age+' years old.');
+    }
+};
+
+//When to use destructuring
+// Destructuring is useful when you only need a specific property of an object.
+
+//regular function
+//regular passing of object
+//even through we are passing the whole object, we are only using the name property
+// const printName = (personData) => {
+ //   console.log(personData.name,personData.age);
+// }
+// ! DESTRUCTURING THE OBJECT
+// if we are only interested in the name property of the object, we can use destructuring
+const printName = ({name,age}) => {
+    console.log(`Hello, my name is ${name} and I am ${age} years old.`);
+}
+
+// we pass the object as an argument to the function
+printName(person);
+
+// ! WITHOUT FUNCTION DESTRUCTURING
+
+const {name, age,} = person;
+console.log(name,age);
+
+
+//destructuring arrays
+const hobbies = ['Reading','Cooking','Gaming'];
+const [hobby1,hobby2,hobby3] = hobbies;
+console.log('My Hobbies are ' + hobby1+ ',',hobby2 + ', and',hobby3);
+
+/* Reminders when using destructuring:
+-The property name must match the object property name.
+-The property name must be enclosed with curly braces.
+-The property name must be followed by a colon.
+*/
+
+//instructions
+//recode the following code snippets
+//play with destructuring and arrays
